@@ -1,0 +1,6 @@
+# ModbusApp
+ ModBus Client 
+
+## Dependencies 
+
+ EasyModbusTCP NuGet Package
