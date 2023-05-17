@@ -46,7 +46,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
             
         }
@@ -69,7 +69,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
         }
 
@@ -99,7 +99,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
            
         }
@@ -122,7 +122,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
         }
 
@@ -142,7 +142,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
         }
 
@@ -162,7 +162,7 @@ namespace ModbusApp
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Unable to connect to Server.");
             }
         }
 
