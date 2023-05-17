@@ -1,6 +1,8 @@
 # ModbusApp
  ModBus Client 
 
-## Dependencies 
+## Dependencies: NuGet Packages 
 
- EasyModbusTCP NuGet Package
+ EasyModbusTCP
+ 
+ EasyModbus Server Simulator (.NET Version)
