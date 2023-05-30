@@ -12,9 +12,10 @@ namespace ModbusApp
         public ModbusApp()
         {
             InitializeComponent();
-            modbus = new ModbusClient("127.0.0.1", 502);
-            // modbus = new ModbusClient("192.168.1.50, 502);
-            modbus = new ModbusClient();
+            modbus = new ModbusClient("192.168.1.50", 502);
+            //modbus = new ModbusClient("192.168.1.50", 502);
+
+            //modbus = new ModbusClient();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -195,13 +196,21 @@ namespace ModbusApp
             timer1.Enabled = false;
             //modbus.WriteMultipleCoils(0, new bool[] { true, true, true, true, true, true, true, true, true, true });
             bool[] readCoils = modbus.ReadCoils(0, 10);
-            if (readCoils[5])
+            if (readCoils[6])
             {
-                door2Lbl.BackColor = Color.OrangeRed;
+                door2Lbl.BackColor = Color.LimeGreen;
             }
             else
             {
-                door2Lbl.BackColor = Color.LimeGreen;
+                door2Lbl.BackColor = Color.OrangeRed;
+            }
+            if (readCoils[4])
+            {
+                door1Lbl.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                door1Lbl.BackColor = Color.OrangeRed;
             }
             timer1.Enabled = true; 
         }
