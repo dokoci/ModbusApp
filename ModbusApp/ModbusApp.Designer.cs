@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.readbtn = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.readCoilsbtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ResetBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.coilValue = new System.Windows.Forms.ComboBox();
@@ -39,15 +40,19 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.readHoldingRegBtn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.readInputRegBtn = new System.Windows.Forms.Button();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.readDiscreteBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.door1Lbl = new System.Windows.Forms.Label();
+            this.door2Lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -55,47 +60,52 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // readbtn
+            // readCoilsbtn
             // 
-            this.readbtn.Location = new System.Drawing.Point(9, 19);
-            this.readbtn.Name = "readbtn";
-            this.readbtn.Size = new System.Drawing.Size(75, 23);
-            this.readbtn.TabIndex = 1;
-            this.readbtn.Text = "Read";
-            this.readbtn.UseVisualStyleBackColor = true;
-            this.readbtn.Click += new System.EventHandler(this.Readbtn_Click);
+            this.readCoilsbtn.Location = new System.Drawing.Point(9, 19);
+            this.readCoilsbtn.Name = "readCoilsbtn";
+            this.readCoilsbtn.Size = new System.Drawing.Size(75, 23);
+            this.readCoilsbtn.TabIndex = 1;
+            this.readCoilsbtn.Text = "Read";
+            this.readCoilsbtn.UseVisualStyleBackColor = true;
+            this.readCoilsbtn.Click += new System.EventHandler(this.Readbtn_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.ResetBtn);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.coilValue);
             this.groupBox1.Controls.Add(this.coilAddress);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 100);
+            this.groupBox1.Size = new System.Drawing.Size(436, 46);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Write Coils";
             // 
-            // button1
+            // ResetBtn
             // 
-            this.button1.Location = new System.Drawing.Point(364, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ResetBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ResetBtn.Location = new System.Drawing.Point(370, 19);
+            this.ResetBtn.Name = "ResetBtn";
+            this.ResetBtn.Size = new System.Drawing.Size(57, 23);
+            this.ResetBtn.TabIndex = 5;
+            this.ResetBtn.Text = "Reset";
+            this.ResetBtn.UseVisualStyleBackColor = true;
+            this.ResetBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 48);
+            this.label2.Location = new System.Drawing.Point(194, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 4;
@@ -103,8 +113,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 46);
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 3;
@@ -112,12 +124,14 @@
             // 
             // coilValue
             // 
+            this.coilValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.coilValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coilValue.FormattingEnabled = true;
             this.coilValue.Items.AddRange(new object[] {
             "True",
             "False"});
-            this.coilValue.Location = new System.Drawing.Point(228, 43);
+            this.coilValue.Location = new System.Drawing.Point(234, 19);
             this.coilValue.Name = "coilValue";
             this.coilValue.Size = new System.Drawing.Size(121, 21);
             this.coilValue.TabIndex = 2;
@@ -125,6 +139,8 @@
             // 
             // coilAddress
             // 
+            this.coilAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.coilAddress.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coilAddress.FormattingEnabled = true;
             this.coilAddress.Items.AddRange(new object[] {
@@ -138,7 +154,7 @@
             "7",
             "8",
             "9"});
-            this.coilAddress.Location = new System.Drawing.Point(60, 43);
+            this.coilAddress.Location = new System.Drawing.Point(66, 19);
             this.coilAddress.Name = "coilAddress";
             this.coilAddress.Size = new System.Drawing.Size(126, 21);
             this.coilAddress.TabIndex = 1;
@@ -155,6 +171,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
@@ -171,7 +188,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.listBox4);
-            this.groupBox5.Controls.Add(this.button4);
+            this.groupBox5.Controls.Add(this.readHoldingRegBtn);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(327, 112);
             this.groupBox5.Name = "groupBox5";
@@ -190,20 +207,20 @@
             this.listBox4.Size = new System.Drawing.Size(75, 228);
             this.listBox4.TabIndex = 8;
             // 
-            // button4
+            // readHoldingRegBtn
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(6, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Read";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.readHoldingRegBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readHoldingRegBtn.Location = new System.Drawing.Point(6, 21);
+            this.readHoldingRegBtn.Name = "readHoldingRegBtn";
+            this.readHoldingRegBtn.Size = new System.Drawing.Size(75, 23);
+            this.readHoldingRegBtn.TabIndex = 7;
+            this.readHoldingRegBtn.Text = "Read";
+            this.readHoldingRegBtn.UseVisualStyleBackColor = true;
+            this.readHoldingRegBtn.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.readInputRegBtn);
             this.groupBox4.Controls.Add(this.listBox3);
             this.groupBox4.Location = new System.Drawing.Point(230, 112);
             this.groupBox4.Name = "groupBox4";
@@ -212,15 +229,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Input Reg";
             // 
-            // button3
+            // readInputRegBtn
             // 
-            this.button3.Location = new System.Drawing.Point(10, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Read";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.readInputRegBtn.Location = new System.Drawing.Point(10, 19);
+            this.readInputRegBtn.Name = "readInputRegBtn";
+            this.readInputRegBtn.Size = new System.Drawing.Size(75, 23);
+            this.readInputRegBtn.TabIndex = 8;
+            this.readInputRegBtn.Text = "Read";
+            this.readInputRegBtn.UseVisualStyleBackColor = true;
+            this.readInputRegBtn.Click += new System.EventHandler(this.button3_Click);
             // 
             // listBox3
             // 
@@ -235,7 +252,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.readDiscreteBtn);
             this.groupBox3.Location = new System.Drawing.Point(126, 112);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(98, 285);
@@ -253,20 +270,20 @@
             this.listBox2.Size = new System.Drawing.Size(75, 228);
             this.listBox2.TabIndex = 6;
             // 
-            // button2
+            // readDiscreteBtn
             // 
-            this.button2.Location = new System.Drawing.Point(15, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Read";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.readDiscreteBtn.Location = new System.Drawing.Point(15, 19);
+            this.readDiscreteBtn.Name = "readDiscreteBtn";
+            this.readDiscreteBtn.Size = new System.Drawing.Size(75, 23);
+            this.readDiscreteBtn.TabIndex = 6;
+            this.readDiscreteBtn.Text = "Read";
+            this.readDiscreteBtn.UseVisualStyleBackColor = true;
+            this.readDiscreteBtn.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Controls.Add(this.readbtn);
+            this.groupBox2.Controls.Add(this.readCoilsbtn);
             this.groupBox2.Location = new System.Drawing.Point(30, 112);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(90, 282);
@@ -283,6 +300,39 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(78, 228);
             this.listBox1.TabIndex = 2;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.door2Lbl);
+            this.groupBox6.Controls.Add(this.door1Lbl);
+            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(436, 48);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tür";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // door1Lbl
+            // 
+            this.door1Lbl.AutoSize = true;
+            this.door1Lbl.Location = new System.Drawing.Point(82, 16);
+            this.door1Lbl.Name = "door1Lbl";
+            this.door1Lbl.Size = new System.Drawing.Size(32, 13);
+            this.door1Lbl.TabIndex = 0;
+            this.door1Lbl.Text = "Tür 1";
+            // 
+            // door2Lbl
+            // 
+            this.door2Lbl.AutoSize = true;
+            this.door2Lbl.Location = new System.Drawing.Point(358, 16);
+            this.door2Lbl.Name = "door2Lbl";
+            this.door2Lbl.Size = new System.Drawing.Size(32, 13);
+            this.door2Lbl.TabIndex = 1;
+            this.door2Lbl.Text = "Tür 2";
             // 
             // ModbusApp
             // 
@@ -304,12 +354,14 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button readbtn;
+        private System.Windows.Forms.Button readCoilsbtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox coilAddress;
         private System.Windows.Forms.TabControl tabControl1;
@@ -319,16 +371,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ResetBtn;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button readDiscreteBtn;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button readInputRegBtn;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button readHoldingRegBtn;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label door2Lbl;
+        private System.Windows.Forms.Label door1Lbl;
     }
 }
 
