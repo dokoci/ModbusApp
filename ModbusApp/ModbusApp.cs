@@ -32,6 +32,59 @@ namespace ModbusApp
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //timer1.Enabled = false;
+            //modbus.WriteMultipleCoils(0, new bool[] { true, true, true, true, true, true, true, true, true, true });
+            bool[] readCoils = modbus.ReadCoils(1, 10);
+            //bool t = readCoils[4];
+            //if (t)
+            //{
+            //    panel2.BackColor = Color.LimeGreen;
+            //}
+            //else
+            //{
+            //    panel1.BackColor = Color.OrangeRed;
+            //}
+            if (readCoils[1])
+            {
+                panel3.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                panel3.BackColor = Color.OrangeRed;
+            }
+
+            if (readCoils[5])
+            {
+                //door2Lbl.BackColor = Color.LimeGreen;
+                panel2.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                //door2Lbl.BackColor = Color.OrangeRed;
+                panel2.BackColor = Color.OrangeRed;
+            }
+            if (readCoils[3])
+            {
+                //door1Lbl.BackColor = Color.LimeGreen;
+                panel1.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                //door1Lbl.BackColor = Color.OrangeRed;
+                panel2.BackColor = Color.OrangeRed;
+            }
+            //timer1.Enabled = true; 
+
+            listBox1.Items.Clear();
+
+            for (int i = 0; i < readCoils.Length; i++)
+            {
+                listBox1.Items.Add(readCoils[i]);
+            }
+        }
+
         private void CoilValue_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -67,7 +120,7 @@ namespace ModbusApp
             try
             {
                 modbus.Connect();
-                bool[] readCoils = modbus.ReadCoils(0, 10);
+                bool[] readCoils = modbus.ReadCoils(1, 10);
                 listBox1.Items.Clear();
 
                 for (int i = 0; i < readCoils.Length; i++)
@@ -84,7 +137,6 @@ namespace ModbusApp
             }
         }
 
-       
         private void coilAddress_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -191,28 +243,9 @@ namespace ModbusApp
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
-            //modbus.WriteMultipleCoils(0, new bool[] { true, true, true, true, true, true, true, true, true, true });
-            bool[] readCoils = modbus.ReadCoils(0, 10);
-            if (readCoils[6])
-            {
-                door2Lbl.BackColor = Color.LimeGreen;
-            }
-            else
-            {
-                door2Lbl.BackColor = Color.OrangeRed;
-            }
-            if (readCoils[4])
-            {
-                door1Lbl.BackColor = Color.LimeGreen;
-            }
-            else
-            {
-                door1Lbl.BackColor = Color.OrangeRed;
-            }
-            timer1.Enabled = true; 
+            modbus.WriteSingleCoil(1, true);
         }
     }
 }

@@ -38,6 +38,9 @@
             this.coilAddress = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.door2Lbl = new System.Windows.Forms.Label();
+            this.door1Lbl = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.readHoldingRegBtn = new System.Windows.Forms.Button();
@@ -49,18 +52,21 @@
             this.readDiscreteBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.door1Lbl = new System.Windows.Forms.Label();
-            this.door2Lbl = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // readCoilsbtn
@@ -129,8 +135,8 @@
             this.coilValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.coilValue.FormattingEnabled = true;
             this.coilValue.Items.AddRange(new object[] {
-            "True",
-            "False"});
+            "TRUE",
+            "FALSE"});
             this.coilValue.Location = new System.Drawing.Point(234, 19);
             this.coilValue.Name = "coilValue";
             this.coilValue.Size = new System.Drawing.Size(121, 21);
@@ -166,11 +172,12 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(456, 426);
+            this.tabControl1.Size = new System.Drawing.Size(456, 562);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.groupBox6);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
@@ -180,19 +187,49 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(448, 400);
+            this.tabPage2.Size = new System.Drawing.Size(448, 536);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Read";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.panel3);
+            this.groupBox6.Controls.Add(this.panel2);
+            this.groupBox6.Controls.Add(this.panel1);
+            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(436, 48);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tür";
+            // 
+            // door2Lbl
+            // 
+            this.door2Lbl.AutoSize = true;
+            this.door2Lbl.Location = new System.Drawing.Point(88, 1);
+            this.door2Lbl.Name = "door2Lbl";
+            this.door2Lbl.Size = new System.Drawing.Size(32, 13);
+            this.door2Lbl.TabIndex = 1;
+            this.door2Lbl.Text = "Tür 2";
+            // 
+            // door1Lbl
+            // 
+            this.door1Lbl.AutoSize = true;
+            this.door1Lbl.Location = new System.Drawing.Point(70, 0);
+            this.door1Lbl.Name = "door1Lbl";
+            this.door1Lbl.Size = new System.Drawing.Size(32, 13);
+            this.door1Lbl.TabIndex = 0;
+            this.door1Lbl.Text = "Tür 1";
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.listBox4);
             this.groupBox5.Controls.Add(this.readHoldingRegBtn);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(327, 112);
+            this.groupBox5.Location = new System.Drawing.Point(327, 210);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(92, 282);
+            this.groupBox5.Size = new System.Drawing.Size(92, 276);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "HoldingReg";
@@ -222,9 +259,9 @@
             // 
             this.groupBox4.Controls.Add(this.readInputRegBtn);
             this.groupBox4.Controls.Add(this.listBox3);
-            this.groupBox4.Location = new System.Drawing.Point(230, 112);
+            this.groupBox4.Location = new System.Drawing.Point(230, 210);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(91, 282);
+            this.groupBox4.Size = new System.Drawing.Size(91, 276);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Input Reg";
@@ -253,9 +290,9 @@
             // 
             this.groupBox3.Controls.Add(this.listBox2);
             this.groupBox3.Controls.Add(this.readDiscreteBtn);
-            this.groupBox3.Location = new System.Drawing.Point(126, 112);
+            this.groupBox3.Location = new System.Drawing.Point(126, 210);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(98, 285);
+            this.groupBox3.Size = new System.Drawing.Size(98, 276);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Read Discrete";
@@ -284,9 +321,9 @@
             // 
             this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Controls.Add(this.readCoilsbtn);
-            this.groupBox2.Location = new System.Drawing.Point(30, 112);
+            this.groupBox2.Location = new System.Drawing.Point(30, 210);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(90, 282);
+            this.groupBox2.Size = new System.Drawing.Size(90, 276);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Read Coils";
@@ -301,46 +338,49 @@
             this.listBox1.Size = new System.Drawing.Size(78, 228);
             this.listBox1.TabIndex = 2;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.door2Lbl);
-            this.groupBox6.Controls.Add(this.door1Lbl);
-            this.groupBox6.Location = new System.Drawing.Point(6, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(436, 48);
-            this.groupBox6.TabIndex = 7;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tür";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // door1Lbl
+            // panel1
             // 
-            this.door1Lbl.AutoSize = true;
-            this.door1Lbl.Location = new System.Drawing.Point(82, 16);
-            this.door1Lbl.Name = "door1Lbl";
-            this.door1Lbl.Size = new System.Drawing.Size(32, 13);
-            this.door1Lbl.TabIndex = 0;
-            this.door1Lbl.Text = "Tür 1";
+            this.panel1.Controls.Add(this.door1Lbl);
+            this.panel1.Location = new System.Drawing.Point(135, 19);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(123, 25);
+            this.panel1.TabIndex = 2;
             // 
-            // door2Lbl
+            // panel2
             // 
-            this.door2Lbl.AutoSize = true;
-            this.door2Lbl.Location = new System.Drawing.Point(358, 16);
-            this.door2Lbl.Name = "door2Lbl";
-            this.door2Lbl.Size = new System.Drawing.Size(32, 13);
-            this.door2Lbl.TabIndex = 1;
-            this.door2Lbl.Text = "Tür 2";
+            this.panel2.Controls.Add(this.door2Lbl);
+            this.panel2.Location = new System.Drawing.Point(275, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(155, 26);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(0, 16);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(117, 25);
+            this.panel3.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(281, 139);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // ModbusApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 450);
+            this.ClientSize = new System.Drawing.Size(480, 578);
             this.Controls.Add(this.tabControl1);
-            this.MaximumSize = new System.Drawing.Size(496, 489);
             this.MinimumSize = new System.Drawing.Size(496, 489);
             this.Name = "ModbusApp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -350,12 +390,15 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,6 +428,10 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label door2Lbl;
         private System.Windows.Forms.Label door1Lbl;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button1;
     }
 }
 
